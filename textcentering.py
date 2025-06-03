@@ -1,12 +1,17 @@
 def centerSomeText(someText):
+    totalWidth = 78
     textLen = len(someText)
-    numOfSpaces = int((78-textLen)/2)
+    totalSpaces = totalWidth - textLen
     
-    return f"║{" "*numOfSpaces}{someText}{" "*numOfSpaces}║"
+    leftSpaces = totalSpaces // 2
+    
+    rightSpaces = totalSpaces - leftSpaces
+    
+    return f"║{" " * leftSpaces}{someText}{" " * rightSpaces}║"
 
 a = f'''╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-{centerSomeText("someText")}
+{centerSomeText(input("What do you want to center? (78 char max): "))}
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 '''
